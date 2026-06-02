@@ -59,7 +59,7 @@ export default function Home() {
               Equity research, rebuilt as a cockpit.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              AlphaTrack brings Wisesheets-style workflows into a polished web
+              AlphaTrack brings workflows into a polished web
               dashboard for screens, formulas, watchlists, statements, and
               repeatable investment research.
             </p>
