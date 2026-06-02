@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --border: #dbe3ea;
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  --secondary: #ecfeff;
+  --secondary-foreground: #155e75;
+  --accent: #e0f2fe;
+  --accent-foreground: #075985;
+  --destructive: #dc2626;
+  --ring: #14b8a6;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #061014;
+  --foreground: #e5edf0;
+  --card: #0c1a20;
+  --card-foreground: #e5edf0;
+  --muted: #14262e;
+  --muted-foreground: #92a8b3;
+  --border: #1d333d;
+  --primary: #2dd4bf;
+  --primary-foreground: #042f2e;
+  --secondary: #0f2f34;
+  --secondary-foreground: #a5f3fc;
+  --accent: #10384a;
+  --accent-foreground: #bae6fd;
+  --destructive: #f87171;
+  --ring: #5eead4;
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+.mesh-bg {
+  background:
+    radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 28rem),
+    radial-gradient(circle at 90% 0%, color-mix(in srgb, #38bdf8 18%, transparent), transparent 24rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--background) 82%, #ffffff), var(--background));
 }
