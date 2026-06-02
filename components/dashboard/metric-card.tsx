@@ -10,9 +10,9 @@ export function MetricCard({
   helper?: string;
 }) {
   return (
-    <Card>
+    <Card className="interactive-card">
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm text-muted-foreground">{label}</CardTitle>
+        <CardTitle className="eyebrow text-[0.68rem]">{label}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-semibold tracking-tight">{value}</div>

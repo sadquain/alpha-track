@@ -12,7 +12,7 @@ export function StockSearch() {
 
   return (
     <form
-      className="flex flex-col gap-3 rounded-lg border bg-card p-4 sm:flex-row"
+      className="flex flex-col gap-3 rounded-lg border bg-surface p-3 shadow-soft sm:flex-row"
       onSubmit={(event) => {
         event.preventDefault();
         router.push(`/dashboard/stocks/${ticker.toUpperCase()}`);

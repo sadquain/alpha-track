@@ -8,11 +8,11 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
 
 const variants = {
   primary:
-    "bg-primary text-primary-foreground shadow-sm hover:opacity-90 focus-visible:ring-primary",
+    "bg-primary text-primary-foreground shadow-sm shadow-primary/25 hover:-translate-y-0.5 hover:opacity-95 focus-visible:ring-primary",
   secondary:
-    "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus-visible:ring-ring",
-  ghost: "hover:bg-muted focus-visible:ring-ring",
-  outline: "border bg-background hover:bg-muted focus-visible:ring-ring",
+    "bg-secondary text-secondary-foreground hover:bg-secondary/85 focus-visible:ring-ring",
+  ghost: "hover:bg-muted/75 focus-visible:ring-ring",
+  outline: "border bg-surface hover:bg-muted/75 focus-visible:ring-ring",
 };
 
 export function Button({ className, variant = "primary", ...props }: ButtonProps) {

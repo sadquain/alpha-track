@@ -15,24 +15,34 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen">
+    <div className="mesh-bg min-h-screen">
       <MarketingNav />
-      <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <main className="section-shell py-16">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-semibold tracking-tight">Pricing that scales with your research.</h1>
-          <p className="mt-4 text-muted-foreground">Start free, upgrade when you need deeper screeners, exports, and higher data limits.</p>
+          <p className="eyebrow">Pricing</p>
+          <h1 className="mt-3 text-5xl font-semibold tracking-tight">
+            Plans for every research desk.
+          </h1>
+          <p className="mt-4 text-muted-foreground">
+            Start free, upgrade when you need deeper screeners, exports, and higher data limits.
+          </p>
         </div>
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
           {plans.map((plan) => (
-            <Card className={plan.name === "Pro" ? "border-primary shadow-lg" : ""} key={plan.name}>
+            <Card
+              className={`interactive-card ${plan.name === "Pro" ? "border-primary bg-foreground text-background shadow-panel" : ""}`}
+              key={plan.name}
+            >
               <CardHeader>
                 <CardTitle>{plan.name}</CardTitle>
-                <p className="text-3xl font-semibold">{plan.price}<span className="text-sm text-muted-foreground">/mo</span></p>
+                <p className="text-4xl font-semibold">{plan.price}<span className={plan.name === "Pro" ? "text-sm text-background/55" : "text-sm text-muted-foreground"}>/mo</span></p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm">
                   {plan.features.map((feature) => (
-                    <li className="flex gap-2" key={feature}><Check className="size-4 text-primary" /> {feature}</li>
+                    <li className="flex gap-2" key={feature}>
+                      <Check className="size-4 text-primary" /> {feature}
+                    </li>
                   ))}
                 </ul>
                 <form action={createCheckoutSession} className="mt-6">

@@ -5,13 +5,13 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export function MarketingNav() {
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 border-b bg-surface/90 backdrop-blur-xl">
+      <div className="section-shell flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="grid size-8 place-items-center rounded-md bg-primary text-primary-foreground">
+          <span className="grid size-9 place-items-center rounded-lg bg-foreground text-background shadow-soft">
             <Activity className="size-4" />
           </span>
-          AlphaTrack
+          <span className="tracking-tight">AlphaTrack</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
           <Link href="/#features" className="hover:text-foreground">Features</Link>

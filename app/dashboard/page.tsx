@@ -17,10 +17,13 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+      <div className="glass-panel flex flex-col justify-between gap-5 p-5 lg:flex-row lg:items-end">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Dashboard</h1>
-          <p className="text-muted-foreground">Search stocks, preview fundamentals, and jump into deeper workflows.</p>
+          <p className="eyebrow">Command center</p>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight">Dashboard</h1>
+          <p className="text-muted-foreground">
+            Search stocks, preview fundamentals, and jump into deeper workflows.
+          </p>
         </div>
         <div className="lg:w-[28rem]"><StockSearch /></div>
       </div>
@@ -30,7 +33,7 @@ export default async function DashboardPage() {
         <MetricCard label="P/E ratio" value={formatNumber(stock.peRatio)} />
         <MetricCard label="Free cash flow" value={formatCurrency(stock.freeCashFlow)} />
       </div>
-      <Card>
+      <Card className="overflow-hidden">
         <CardHeader><CardTitle>Historical price</CardTitle></CardHeader>
         <CardContent>
           <Suspense fallback={<Skeleton className="h-72" />}>
@@ -40,8 +43,13 @@ export default async function DashboardPage() {
       </Card>
       <div className="grid gap-4 lg:grid-cols-3">
         {stocks.slice(0, 3).map((item) => (
-          <Link className="rounded-lg border bg-card p-5 transition hover:border-primary" href={`/dashboard/stocks/${item.ticker}`} key={item.ticker}>
-            <p className="font-semibold">{item.ticker}</p>
+          <Link className="interactive-card rounded-lg border bg-card p-5 shadow-soft" href={`/dashboard/stocks/${item.ticker}`} key={item.ticker}>
+            <div className="flex items-center justify-between">
+              <p className="font-semibold">{item.ticker}</p>
+              <span className={item.change >= 0 ? "text-sm text-success" : "text-sm text-destructive"}>
+                {item.change}%
+              </span>
+            </div>
             <p className="text-sm text-muted-foreground">{item.name}</p>
             <p className="mt-4 text-2xl font-semibold">${item.price}</p>
           </Link>
